@@ -1,7 +1,4 @@
-import React, { lazy } from "react";
-import styled, { createGlobalStyle } from 'styled-components';
-import { Routes, Route } from "react-router-dom";
-import moment from "moment";
+import { createGlobalStyle } from 'styled-components';
 
 const CSSReset = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -65,39 +62,4 @@ const CSSReset = createGlobalStyle`
   }
 `;
 
-const Menu = lazy(() => import('hijo1/Menu'));
-
-const StyledApp = styled.section`
-  background-color: lightcoral;
-  height: 100%;
-  font-family: 'Courier New', Courier, monospace;
-  padding: 30px;
-`;
-
-const Titulo = styled.h1`
-  font-size: 4em;
-`;
-
-const Subtitulo = styled.h2`
-  font-size: 3em;
-`;
-
-const App = () => (
-  <StyledApp>
-    <CSSReset />
-
-    <Titulo>HIJO 2</Titulo>
-    <h2>{moment().format('LLL')}</h2>
-
-    <Menu />
-
-    <Routes>
-      <Route path="/" index element={<Subtitulo>Inicio</Subtitulo>} />
-      <Route path="ruta1" element={<Subtitulo>Ruta 1</Subtitulo>} />
-      <Route path="ruta2" element={<Subtitulo>Ruta 2</Subtitulo>} />
-      <Route path="ruta3" element={<Subtitulo>Ruta 3</Subtitulo>} />
-    </Routes>
-  </StyledApp>
-);
-
-export default App;
+export default CSSReset;

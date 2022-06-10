@@ -1,14 +1,31 @@
 import React from "react";
+import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
+const Enlace = styled(Link)`
+  &:hover {
+    font-weight: bold;
+  }
+`;
+
+const Item = styled.li`
+  text-transform: uppercase;
+`;
+
+const Lista = styled.ul`
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Menu = () => (
-  <ul>
-    <li><Link to="">ir a inicio</Link></li>
-    <li><Link to="ruta1">ir a ruta 1</Link></li>
-    <li><Link to="ruta2">ir a ruta 2</Link></li>
-    <li><Link to="/ruta3">ir a ruta 3</Link></li>
-    <li><Link to="/hijo1/ruta2">ir a hijo 1</Link></li>
-  </ul>
+  <Lista>
+    <Item><Enlace to="">ir a inicio</Enlace></Item>
+    <Item><Enlace to="ruta1">ir a ruta 1</Enlace></Item>
+    <Item><Enlace to="ruta2">ir a ruta 2</Enlace></Item>
+    <Item><Enlace to="ruta3">ir a ruta 3</Enlace></Item>
+    <Item><Enlace to="/hijo1/ruta2">ir a hijo 1 ruta 2</Enlace></Item>
+  </Lista>
 );
 
 export default Menu;
